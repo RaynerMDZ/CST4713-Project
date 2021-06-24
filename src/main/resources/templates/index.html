@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Rayner Mendez - CST 4713</title>
+
+  <link th:href="@{/css/main/index.css}" rel="stylesheet" />
+  <link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+</head>
+<body class="bg-light">
+
+
+<div class="container">
+  <div class="d-flex flex-row min-vh-100 justify-content-center align-items-center">
+
+    <div class="col-lg-3 col-3 justify-content-center text-center ">
+      <h1 class="text-dark">ABC</h1>
+      <p class="text-dark">This project displays a colorful alphabet.</p>
+      <a href="/abcd"><button class="btn btn-dark text-light">Check it out!</button></a>
+    </div>
+
+    <div class="col-lg-3 col-6 justify-content-center text-center ">
+      <h1 class="text-dark">Numbers</h1>
+      <p class="text-dark">This project displays a list of number from 0 to 1000.</p>
+      <a href="/numberD123"><button class="btn btn-dark text-light">Check it out!</button></a>
+    </div>
+
+    <div class="col-lg-3 col-3 justify-content-center text-center ">
+      <h1 class="text-dark">Grades</h1>
+      <p class="text-dark">This project reads a CSV file and display all grades in the CSV file.</p>
+      <a href="/grades"><button class="btn btn-dark text-light">Check it out!</button></a>
+    </div>
+
+    <div class="col-lg-3 col-3 justify-content-center text-center ">
+      <h1 class="text-dark">Tic Tac Toe</h1>
+      <p class="text-dark">This is a simple but fascinating tic tac toe game. You should try it!</p>
+      <a href="/tictactoe"><button class="btn btn-dark text-light">Check it out!</button></a>
+    </div>
+  </div>
+</div>
+
+
+<script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+<script crossorigin="anonymous" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

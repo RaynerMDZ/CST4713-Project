@@ -1,0 +1,32 @@
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+div.columns{
+    width: 4.25in;
+    padding-top: 25px;
+    margin: 1px 3px 1px 1px;
+    float: left;
+}
+
+caption{
+    font-size:200%;
+    font-weight: bold;
+    padding-top: 6px;
+}
+
+.salary{
+    border-collapse: collapse;
+}
+
+.salary td, .salary th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: right;
+}
+
+.salary tr.highLight {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}

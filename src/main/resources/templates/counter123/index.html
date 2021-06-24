@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>123 Counter</title>
+
+    <link th:href="@{/css/counter123/index.css}" rel="stylesheet" />
+</head>
+<body>
+
+<div class="n123Parent">
+    <h1> 123 - Dynamic - Design</h1>
+
+    <div th:each="number : ${numbers}">
+        <div th:class="${number.cssClass}">
+            <span th:text="${number.number}">0</span>
+        </div>
+    </div>
+
+    <div class="buttonGroup">
+        <form method="get" th:object="${counter123Form}">
+            count by: <label for="number"></label><select id="number" name="number" th:field="*{number}">
+            <option value="1"> One </option>
+            <option value="2"> Two </option>
+            <option value="3"> Three </option>
+            <option value="4"> Four </option>
+            <option value="5"> Five </option>
+            <option value="6"> Six </option>
+            <option value="7"> Seven </option>
+            <option value="8"> Eight </option>
+            <option value="9"> Nine </option>
+            <option value="10"> Ten </option>
+            <option value="20"> Twenty </option>
+            <option value="25"> Twenty-Five </option>
+            <option value="50"> Fifty </option>
+            <option value="100"> Hundred </option>
+        </select>
+
+            highlight: <label for="highlight"></label>
+            <select id="highlight" name="highlight" th:field="*{highlight}">
+            <option value="none"> no numbers </option>
+            <option value="even"> even numbers </option>
+            <option value="odd"> odd numbers </option>
+            <option value="every.5"> every five numbers </option>
+            <option value="every.10"> every ten numbers </option>
+            <option value="contains.8"> numbers that contain 8 </option>
+        </select>
+            <input name="process" type="submit" value="count" />
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

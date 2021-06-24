@@ -1,0 +1,54 @@
+*{
+    font-family: verdana, sans-serif;
+}
+div.abcParent{
+    width: 730px;
+    height: 730px;
+    margin: .5in 0 0 .5in;
+}
+
+div.counter {
+    font-size: 8pt;
+    text-align: right;
+    margin-top: .17in;
+    padding-right: 4px;
+}
+
+div.abc, div.abc-bigger{
+    width: 85px;
+    height: 55px;
+    border: 1px solid blue;
+    padding-top: 25px;
+    margin: 1px;
+    text-align: center;
+    font-size: 15pt;
+    float: left;
+}
+
+div.abc-bigger {
+    width: 110px;
+    height: 70px;
+    border: 1px solid blue;
+    padding-top: 40px;
+    font-size: 20pt;
+}
+
+div.vowel{
+    background-color: silver;
+}
+
+div.consonant {
+    background-color: pink;
+}
+
+div.buttonGroup {
+    margin-top: .3in;
+    float: left;
+    width: 100%;
+    height: 60px;
+}
+
+div.buttonGroup button {
+    width: 1.5in;
+    height: .30in;
+}

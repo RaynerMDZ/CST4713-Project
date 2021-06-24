@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grading Report</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+          crossorigin="anonymous">
+
+    <link th:href="@{/css/gradingReport.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="body">
+
+    <table class="students">
+        <caption style="text-align:center; caption-side: top">Grading Report For <span th:text="${title}"></span></caption>
+        <thead>
+<!--        <tr>-->
+<!--            <th class="center" colspan="7">Exams</th>-->
+<!--        </tr>-->
+        <tr>
+            <th class="center" colspan="7">
+                Letter Grade:
+                <a href="./grades?letterGrade=All">All</a> &nbsp; &nbsp; &nbsp;
+                <a href="./grades?letterGrade=A">A</a>
+                <a href="./grades?letterGrade=A-">A-</a>
+                <a href="./grades?letterGrade=B+%2b">B+</a>
+                <a href="./grades?letterGrade=B">B</a>
+                <a href="./grades?letterGrade=B-">B-</a>
+                <a href="./grades?letterGrade=C+%2b">C+</a>
+                <a href="./grades?letterGrade=C">C</a>
+                <a href="./grades?letterGrade=C-">C-</a>
+                <a href="./grades?letterGrade=D">D</a>
+                <a href="./grades?letterGrade=F">F</a>
+            </th>
+        </tr>
+        <tr>
+            <th rowspan="1">id</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="grade : ${grades}">
+            <td th:text="${grade.id}">9999</td>
+            <td th:text="${grade.scores[0]}">one</td>
+            <td th:text="${grade.scores[1]}">two</td>
+            <td th:text="${grade.scores[2]}">three</td>
+            <td th:text="${grade.scores[3]}">four</td>
+            <td th:text="${grade.scores[4]}">five</td>
+            <td>
+                <span class="letterGrade" th:text="${grade.letterGrade}">A+</span>,
+                <span class="gpa" th:text="${grade.gpa}">4.0</span>,
+                <span class="score" th:text="${grade.averageScore}">97.31</span>
+            </td>
+        </tr>
+        <tfoot>
+        <tr>
+            <th>count</th>
+            <th>average</th>
+            <th>max</th>
+            <th>min</th>
+            <th>sum</th>
+            <th>avg &gt; 90</th>
+            <th>avg C,D,F</th>
+        </tr>
+
+        <tr>
+            <td th:text="${count}"></td>
+            <td th:text="${average}"></td>
+            <td th:text="${max}"></td>
+            <td th:text="${min}"></td>
+            <td th:text="${sum}"></td>
+            <td th:text="${avgGreaterThan90}"></td>
+            <td th:text="${avgLessThan70}"></td>
+        </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

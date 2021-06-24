@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ABC - Counter - Dynamic</title>
+    <link th:href="@{/css/abc_counter/style.css}" rel="stylesheet" />
+
+    <link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="text-center text-light">ABC Counter</h1>
+
+    <div class="m-5">
+        <form th:object="${abcForm}" method="get">
+            <label>
+                <select id="displayMode" name="displayMode" th:field="*{displayMode}">
+                    <optgroup label="InClass Portion">
+                        <option value="all">Show All</option>
+                        <option value="uppercase">Show Only Uppercase</option>
+                        <option value="lowercase">Show Only Lowercase</option>
+                    </optgroup>
+
+                    <optgroup label="Take Home Portion / Exam">
+                        <option value="allReversed">(R) Show All</option>
+                        <option value="uppercaseReversed">(R) Show Only Uppercase</option>
+                        <option value="lowercaseReversed">(R) Show Only Lowercase</option>
+                    </optgroup>
+                </select>
+            </label>
+            <input class="btn-light" name="submit" type="submit"/>
+        </form>
+        time stamp: <span th:text="${abcForm.message}"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-6 box-size" th:each="letter : ${alphabet}">
+            <div th:class="${letter.htmlClass}">
+                <span th:text="${letter.letter}" th:class="${cssClass}"></span>
+                <div class="counter" th:text="${letter.number}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/3.3.1/jquery.min.js}"></script>
+<script crossorigin="anonymous" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

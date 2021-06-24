@@ -1,0 +1,31 @@
+* {
+    font-family: Verdana, sans-serif;
+}
+
+.small-box {
+    width: 130px;
+    height: 115px;
+    border: 1px solid black;
+    padding-top: 20px;
+    margin: 1px;
+    text-align: center;
+    font-size: 50pt;
+    float: left;
+    --display: flex;
+}
+
+#btn-clear {
+    margin-top: .5in;
+    width: 1.5in;
+}
+
+#error-message {
+    padding-top: .50in;
+    width: 100%;
+    float: left;
+    height: .35in;
+}
+
+.winner {
+    color: dodgerblue;
+}
